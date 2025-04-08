@@ -94,6 +94,7 @@ impl Session {
             inactivity_timeout: Some(Duration::from_secs(5)),
             preferred: Preferred {
                 kex: Cow::Owned(vec![
+                    russh::kex::DH_G1_SHA1,
                     russh::kex::CURVE25519_PRE_RFC_8731,
                     russh::kex::EXTENSION_SUPPORT_AS_CLIENT,
                 ]),
