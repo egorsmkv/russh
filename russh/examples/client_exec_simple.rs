@@ -103,6 +103,12 @@ impl Session {
             ..<_>::default()
         };
 
+        // Print kexes this client supports
+        info!("Supported kexes:");
+        for kex in config.preferred.kex.iter() {
+            info!("- {:?}", kex);
+        }
+
         let config = Arc::new(config);
         let sh = Client {};
 
